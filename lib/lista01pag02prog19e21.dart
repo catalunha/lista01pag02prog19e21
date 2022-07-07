@@ -1,18 +1,22 @@
 void sacar(String valorDoSaque) {
-  var notas = valorEmNotas(valorDoSaque);
-  var texto = valorEmTexto(valorDoSaque);
-
-  if (notas == null) {
-    print('Saque com problemas ! 😬');
-  } else {
-    print('Saque bem sucedido ! 👍');
-    print('Olá');
-    print('Você deseja sacar R\$ $valorDoSaque,00 ($texto)');
-    print('Portanto irei lhe entregar :');
-    for (var element in notas.entries) {
+  if (int.parse(valorDoSaque) > 0 && int.parse(valorDoSaque) < 1000) {
+    var notas = valorEmNotas(valorDoSaque);
+    var texto = valorEmTexto(valorDoSaque);
+    if (notas == null) {
+      print('Saque com problemas ! 😬');
+    } else {
+      print('Saque bem sucedido ! 👍');
+      print('Olá');
       print(
-          '${element.value} nota${element.value > 1 ? 's' : ''} de R\$ ${element.key},00 ${int.parse(element.key) > 1 ? 'reais' : 'real'}');
+          'Você deseja sacar R\$ $valorDoSaque,00 ($texto ${int.parse(valorDoSaque) > 1 ? 'reais' : 'real'})');
+      print('Portanto irei lhe entregar :');
+      for (var element in notas.entries) {
+        print(
+            '${element.value} nota${element.value > 1 ? 's' : ''} de R\$ ${element.key},00 ${int.parse(element.key) > 1 ? 'reais' : 'real'}');
+      }
     }
+  } else {
+    print('Informe um valor entre 1 e 999 ! 😬');
   }
 }
 
