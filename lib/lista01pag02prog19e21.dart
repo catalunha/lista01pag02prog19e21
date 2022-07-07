@@ -16,7 +16,7 @@ void sacar(String valorDoSaque) {
       }
     }
   } else {
-    print('Informe um valor entre 1 e 999 ! 😬');
+    print('Informe um valor entre 1 e 999 ! 😟');
   }
 }
 
